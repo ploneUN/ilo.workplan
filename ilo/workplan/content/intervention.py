@@ -29,8 +29,31 @@ from ilo.workplan import MessageFactory as _
 
 class IIntervention(form.Schema, IImageScaleTraversable):
     """
-    
     """
-    pass
+    title = schema.TextLine(
+        title=_(u'Title'),
+        description=_(''),
+        )
+
+    description = schema.Text(
+        title=_(u'Baseline situation/Description'),
+        description=_(''),
+        )
+
+    iris = schema.TextLine(
+        title=_(u'IRIS Country Outcome'),
+        description=_(''),
+        )
+
+    outcome = RichText(
+        title=_(u'Intended outcome situation/results'),
+        description=_(''),
+        )
+
+    indicators = RichText(
+        title=_(u'Indicators/Means of verification'),
+        description=_(''),
+        )
+
 
 alsoProvides(IIntervention, IFormFieldProvider)

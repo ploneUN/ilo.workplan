@@ -30,5 +30,15 @@ from ilo.workplan import MessageFactory as _
 class IWorkplan(form.Schema, IImageScaleTraversable):
     """
     """
+    title = schema.TextLine(
+        title=_(u'Title'),
+        description=_(''),
+        )
+
+    description = schema.Text(
+        title=_(u'Description'),
+        description=_(''),
+        required=False,
+        )
 
 alsoProvides(IWorkplan, IFormFieldProvider)
