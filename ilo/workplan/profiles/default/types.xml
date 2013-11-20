@@ -8,4 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="ilo.workplan.activity" meta_type="Dexterity FTI" />
+  <object name="ilo.workplan.intervention" meta_type="Dexterity FTI" />
+  <object name="ilo.workplan.workplan" meta_type="Dexterity FTI" />
 </object>
