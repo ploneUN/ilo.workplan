@@ -35,12 +35,6 @@ class IActivity(form.Schema, IImageScaleTraversable):
         description=_(''),
         )
 
-    description = schema.Text(
-        title=_(u'Description'),
-        description=_(''),
-        required=False,
-        )
-
     startDate = schema.Date(
         title=_(u'Start Date'),
         description=_(''),

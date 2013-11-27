@@ -1,0 +1,16 @@
+/* style.css */
+
+.activity-table caption {
+    font-weight:bold;
+}
+
+.iris-outcome {
+    margin-top: 20px;
+
+}
+
+.intervention { 
+    border-bottom: solid 1px rgb(221,221,221);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
