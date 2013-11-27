@@ -87,48 +87,56 @@ class IActivity(form.Schema, IImageScaleTraversable):
         title=_(u'RBTC ACTEMP'),
         description=_('e.g. 5500'),
         required=False,
+        default=0.0,
         )
 
     rbsa_actemp_hq = schema.Float(
         title=_(u'RBSA ACTEMP HQ'),
         description=_('e.g. 4000'),
         required=False,
+        default=0.0,
         )
 
     rbsa_regional = schema.Float(
         title=_(u'RBSA Regional'),
         description=_('e.g. 7300'),
         required=False,
+        default=0.0,
         )
 
     tc_projects = schema.Float(
         title=_(u'TC projects'),
         description=_('e.g. 3450'),
         required=False,
+        default=0.0,
         )
 
     itc_turin = schema.Float(
         title=_(u'ITC Turin'),
         description=_('e.g. 1200'),
         required=False,
+        default=0.0,
         )
 
     eos_company_oie = schema.Float(
         title=_(u'EOs, COMPANY, OIE'),
         description=_('e.g. 7000'),
         required=False,
+        default=0.0,
         )
 
     rbtc_oa = schema.Float(
         title=_(u'RBTC OA'),
         description=_('e.g. 5600'),
         required=False,
+        default=0.0,
         )
 
     fund_to_be_determinated = schema.Float(
         title=_(u'Fund to be determinated'),
         description=_('e.g. 50000'),
         required=False,
+        default=0.0,
         )
 
 alsoProvides(IActivity, IFormFieldProvider)

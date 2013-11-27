@@ -1,17 +1,95 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="ilo.workplan"
-      metal:use-macro="context/main_template/macros/master">
-<head>
-</head>
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ilo.workplan">
 <body>
-  <div metal:fill-slot="content-core">
-    <div metal:define-macro="content-core">
-        Hello world
-    </div>
-  </div>
+
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+      <tal:block repeat="intervention context/values">
+
+            <div class="row intervention">
+            <div class="title-description cell position-0 width-4">
+                <h1><a tal:attributes="href intervention/absolute_url" tal:content="intervention/title"></a></h1>
+
+            </div>
+
+            <div class="other-info cell position-4 width-12">
+            <table class="activity-table fancy grid listing">
+                <caption> Finance </caption>
+                <thead>
+                    <tr>
+                        <th>Title of activity</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                        <th>EPA/PO Number</th>
+                        <th>RBTC ACTEMP</th>
+                        <th>RBSA ACTEMP HQ</th>
+                        <th>RBSA Regional</th>
+                        <th>TC projects</th>
+                        <th>ITC Turin</th>
+                        <th>EOs, COMPANY, OIE</th>
+                        <th>RBTC OA</th>
+                        <th>Fund to be determinated</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr tal:repeat="activity intervention/values">
+                        <td><a tal:attributes="href activity/absolute_url" tal:content="activity/title">col0</a></td>
+                        <td class="activity-date"
+                             tal:content="python: activity.startDate.strftime('%d %b %Y')">
+                         </td>
+                         <td class="activity-date"
+                            tal:content="python: activity.endDate.strftime('%d %b %Y')">
+                        </td>
+                        <td tal:content="activity/epapo_number"></td>
+                        <td tal:content="activity/rbtc_actemp"></td>
+                        <td tal:content="activity/rbsa_actemp_hq"></td>
+                        <td tal:content="activity/rbsa_regional"></td>
+                        <td tal:content="activity/tc_projects"></td>
+                        <td tal:content="activity/itc_turin"></td>
+                        <td tal:content="activity/eos_company_oie"></td>
+                        <td tal:content="activity/rbtc_oa"></td>
+                        <td tal:content="activity/fund_to_be_determinated"></td>
+                        <td tal:content="python:view.get_total_finance(activity)"></td>
+
+                    </tr>
+                    <tr class="cumulative-finance">
+                        <td>Cumulative</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'rbtc_actemp')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'rbsa_actemp_hq')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'rbsa_regional')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'tc_projects')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'itc_turin')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'eos_company_oie')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'rbtc_oa')"></td>
+                        <td tal:content="python: view.get_cumulative_finance(intervention, 'fund_to_be_determinated')"></td>
+                        <td tal:content="python: view.get_cumulative_total(intervention)"></td>
+                    </tr>
+                </tbody>
+           </table>
+       
+
+
+
+
+      </tal:block>
+
+
+
+  </metal:content-core>
+</metal:main>
+
 </body>
 </html>
+

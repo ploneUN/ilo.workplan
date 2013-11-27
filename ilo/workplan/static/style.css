@@ -14,3 +14,9 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
 }
+
+.cumulative-finance {
+    background-color: rgb(41, 128, 185);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}

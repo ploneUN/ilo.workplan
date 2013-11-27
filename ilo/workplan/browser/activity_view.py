@@ -4,9 +4,9 @@ from ilo.workplan.content.activity import IActivity
 
 grok.templatedir('templates')
 
+
 class Index(dexterity.DisplayForm):
     grok.context(IActivity)
     grok.require('zope2.View')
     grok.template('activity_view')
     grok.name('view')
-
