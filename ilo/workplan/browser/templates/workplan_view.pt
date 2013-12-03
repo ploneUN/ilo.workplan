@@ -11,6 +11,12 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
+  <div class="row">
+      <div class="change-finance-view cell position-13 width-3"><a tal:attributes="href
+              string:${context/absolute_url}/workplanfinance">Click here for
+              finance view</a></div>
+  </div>
+
       <tal:block repeat="intervention context/values">
 
             <div class="row intervention">
